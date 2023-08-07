@@ -1,14 +1,16 @@
 PODS:
-  - DTPhotoViewerController (0.1.0)
+  - DTPhotoViewerController (3.1.1)
 
 DEPENDENCIES:
   - DTPhotoViewerController (from `../`)
 
 EXTERNAL SOURCES:
   DTPhotoViewerController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  DTPhotoViewerController: 6bfd31a3b5390609aa9338c15e07d55249894101
+  DTPhotoViewerController: 964e794b715ae29c3bffaca90c81ff8407d22e2a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: cb183aee7391944f34b9894e335e95e445ed81af
+
+COCOAPODS: 1.12.1
