@@ -575,7 +575,7 @@ open class DTPhotoViewerController: UIViewController {
     }
     
     open func didReceiveTapGesture() {
-        
+        _dismiss()
     }
     
     open func didReceiveDoubleTapGesture() {
