@@ -115,13 +115,28 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedImageIndex = indexPath.row
-
-        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
-            let viewController = SimplePhotoViewerController(referencedView: cell.imageView, image: cell.imageView.image)
-            viewController.dataSource = self
-            viewController.delegate = self
-            present(viewController, animated: true, completion: nil)
+        
+        
+        let imageViewArray:[UIImageView] = (0...4).compactMap { index in
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+                return cell.imageView
+            }
+            return nil
         }
+        
+        
+
+
+        let viewController = CSSimpleImageViewerViewController(imageViewArray: imageViewArray, selectedImageIndex: selectedImageIndex )
+        present(viewController, animated: true, completion: nil)
+
+//        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+//            let viewController = SimplePhotoViewerController(referencedView: cell.imageView, image: cell.imageView.image)
+//            viewController.dataSource = self
+//            viewController.delegate = self
+//            present(viewController, animated: true, completion: nil)
+//        }
     }
 }
 
